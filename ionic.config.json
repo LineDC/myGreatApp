@@ -1,0 +1,7 @@
+{
+  "name": "myGreatApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

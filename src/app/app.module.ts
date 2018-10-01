@@ -1,0 +1,38 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+// On importe la nouvelle page
+import { MaSuperPage } from '../pages/ma-super/ma-super';
+
+import { PipesModule } from '../pipes/pipes.module';
+
+// Dans déclaration et entryComponents, on va importer le nom qu'on a entre {}
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage,
+    MaSuperPage,
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    PipesModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    MaSuperPage,
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}
