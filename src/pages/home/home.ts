@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
+import { Slides } from 'ionic-angular';
 
 // Importer la page qui va nous rediriger avec le clic sur le bouton
 import { MaSuperPage } from '../ma-super/ma-super';

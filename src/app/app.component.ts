@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { MaSuperPage } from '../pages/ma-super/ma-super';
 import { ListPage } from '../pages/list/list';
 import { FormPage } from '../pages/form/form';
 
@@ -21,7 +22,8 @@ export class MyApp {
 
     this.pages = [
       { title: 'Accueil', component: HomePage },
-      { title: 'ListeTest', component: ListPage },
+      { title: 'PizzApp', component: MaSuperPage },
+      // { title: 'ListeTest', component: ListPage },
       { title: 'Formulaire', component: FormPage }
     ];
     platform.ready().then(() => {
