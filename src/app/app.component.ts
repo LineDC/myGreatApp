@@ -20,9 +20,9 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Form', component: FormPage }
+      { title: 'Accueil', component: HomePage },
+      { title: 'ListeTest', component: ListPage },
+      { title: 'Formulaire', component: FormPage }
     ];
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

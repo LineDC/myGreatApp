@@ -7,12 +7,54 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Form</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Formulaire</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <form (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Produit sélectionné :</ion-label>
+      <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+    </ion-item>
+    <!-- <ion-list radio-group [(ngModel)]="categories.title" name="title"> -->
+    <ion-list radio-group [(ngModel)]="todo.title" name="title">
+
+      <ion-list-header>
+        Catégories
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Pizza</ion-label>
+        <ion-radio value="Pizza"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Boisson soft</ion-label>
+        <ion-radio value="Boisson soft"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Boison alcoolisé</ion-label>
+        <ion-radio value="Boison alcoolisé"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Dessert</ion-label>
+        <ion-radio value="Dessert"></ion-radio>
+      </ion-item>
+
+    </ion-list>
+    <button ion-button type="submit" block>Add Todo</button>
+  </form>
 
 </ion-content>

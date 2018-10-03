@@ -15,6 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FormPage {
 
+  todo = {};
+  // categories = {}
+
+  logForm() {
+    console.log(this.todo)
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
