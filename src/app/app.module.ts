@@ -14,6 +14,7 @@ import { PipesModule } from '../pipes/pipes.module';
 import { ListPage } from '../pages/list/list';
 
 import { FormPage } from '../pages/form/form';
+import { ConnectApiProvider } from '../providers/connect-api/connect-api';
 
 
 // Dans déclaration et entryComponents, on va importer le nom qu'on a entre {}
@@ -41,7 +42,8 @@ import { FormPage } from '../pages/form/form';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConnectApiProvider
   ]
 })
 export class AppModule {}

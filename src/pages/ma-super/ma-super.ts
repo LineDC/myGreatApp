@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 
 
 /**
@@ -10,7 +11,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  */
 
 // @IonicPage()
-// Lien à supprimer quand si on supprime le fichier "module.ts"
+// Lien à supprimer quand si on supprime le fichier "ma-super.module.ts"
 
 @Component({
   selector: 'page-ma-super',
@@ -22,10 +23,15 @@ export class MaSuperPage {
   firstnameuser: string
   lastnameuser: string
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  categories: [any]
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider) {
     this.firstname = this.navParams.get('firstname'),
     this.firstnameuser = this.navParams.get('firstnameuser'),
-    this.lastnameuser = this.navParams.get('lastnameuser')
+    this.lastnameuser = this.navParams.get('lastnameuser'),
+    this.apiProvider.getCategories().subscribe(products => {
+      this.categories = data.data.categories;
+      })
   }
 
   ionViewDidLoad() {
