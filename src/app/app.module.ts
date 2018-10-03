@@ -13,13 +13,17 @@ import { PipesModule } from '../pipes/pipes.module';
 
 import { ListPage } from '../pages/list/list';
 
+import { FormPage } from '../pages/form/form';
+
+
 // Dans déclaration et entryComponents, on va importer le nom qu'on a entre {}
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     MaSuperPage,
-    ListPage
+    ListPage,
+    FormPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { ListPage } from '../pages/list/list';
     MyApp,
     HomePage,
     MaSuperPage,
-    ListPage
+    ListPage,
+    FormPage
   ],
   providers: [
     StatusBar,
