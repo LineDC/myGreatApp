@@ -28,6 +28,7 @@
     <ion-list><ion-item *ngFor="let p of products">{{p.name}}</ion-item></ion-list>
     <br>
     <br>
+    <ion-list><ion-item *ngFor="let p of products">{{p.name}} => Catégorie : {{p.categorie.name}}</ion-item></ion-list>
     <br>
     Nos catégories :
     <ion-list><ion-item *ngFor="let c of categories">{{c.name}}</ion-item></ion-list>

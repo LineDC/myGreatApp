@@ -12,16 +12,16 @@ import 'rxjs/add/operator/map';
 export class ConnectApiProvider {
 
   url: string
-  header = new Headers;
+  // header = new Headers;
 
   constructor(public http: Http) {
     console.log('Hello ConnectApiProvider Provider');
     this.url = 'https://cors-anywhere.herokuapp.com/http://fast-badlands-48562.herokuapp.com/api/1.0';
   }
 
-  setProviders() {
-    this.http.get(this.url, {headers: myHeaders}).map(response => response.json());
-  }
+  // setProviders() {
+  //   this.http.get(this.url, {headers: myHeaders}).map(response => response.json());
+  // }
 
   getCategories() {
     return this.http.get(this.url+'/categories').map(response => response.json());
