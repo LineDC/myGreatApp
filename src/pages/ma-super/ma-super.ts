@@ -25,6 +25,7 @@ export class MaSuperPage {
 
   categories: [any]
   products: [any]
+  menus: [any]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider) {
     this.firstname = this.navParams.get('firstname'),
@@ -45,10 +46,18 @@ export class MaSuperPage {
     });
   }
 
+  showMenus() {
+    // le categories après le subscribe peut s'appeler comme on veut, il faut juste que ça soit le même après le this.nom =
+    this.apiProvider.getMenus().subscribe(menus => {
+      this.menus = menus
+    });
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MaSuperPage');
     this.showProducts();
     this.showCategories();
+    this.showMenus();
   }
 
 }

@@ -24,12 +24,18 @@
   </div>
 
   <ng-template #withoutPipe>
-    VEUX-TU BIEN SAISIR TES IDENTIFIANTS !!!
-    <div *ngFor="let c of categories">{{c.name}}</div>
+    Nos pizzas :
+    <ion-list><ion-item *ngFor="let p of products">{{p.name}}</ion-item></ion-list>
     <br>
     <br>
     <br>
-    <div *ngFor="let p of products">{{p.name}}</div>
+    Nos catégories :
+    <ion-list><ion-item *ngFor="let c of categories">{{c.name}}</ion-item></ion-list>
+    <br>
+    <br>
+    <br>
+    Nos menus :
+    <ion-list><ion-item *ngFor="let m of menus">{{m.name}}</ion-item></ion-list>
   </ng-template>
 
   <!-- <div *ngIf="firstnameuser; else withoutPipe">
