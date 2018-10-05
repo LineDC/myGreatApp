@@ -24,7 +24,7 @@
   </div>
 
   <ng-template #withoutPipe>
-    Nos pizzas :
+    <!-- Nos pizzas :
     <ion-list><ion-item *ngFor="let p of products">{{p.name}}</ion-item></ion-list>
     <br>
     <br>
@@ -36,8 +36,58 @@
     <br>
     <br>
     Nos menus :
-    <ion-list><ion-item *ngFor="let m of menus">{{m.name}}</ion-item></ion-list>
+    <ion-list><ion-item *ngFor="let m of menus">{{m.name}}</ion-item></ion-list> -->
   </ng-template>
+
+  <div padding>
+  <ion-segment [(ngModel)]="categorie">
+    <ion-segment-button value="pizza">
+      Pizza
+    </ion-segment-button>
+    <ion-segment-button value="drink">
+      Boisson
+    </ion-segment-button>
+    <ion-segment-button value="dessert">
+      Dessert
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="categorie">
+  <ion-list *ngSwitchCase="'pizza'">
+    <ion-item>
+      <div *ngFor="let p of products">
+        <div *ngIf = "p.categorie_id == 1">
+          {{p.name}}
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</div>
+
+<div [ngSwitch]="categorie">
+  <ion-list *ngSwitchCase="'drink'">
+    <ion-item>
+      <div *ngFor="let p of products">
+        <div *ngIf = "p.categorie_id == 11">
+          {{p.name}}
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</div>
+
+<div [ngSwitch]="categorie">
+  <ion-list *ngSwitchCase="'dessert'">
+    <ion-item>
+      <div *ngFor="let p of products">
+        <div *ngIf = "p.categorie_id == 21">
+          {{p.name}}
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</div>
 
   <!-- <div *ngIf="firstnameuser; else withoutPipe">
    Bonjour {{firstnameuser | firstLetterUppercase}} {{lastnameuser | allLetterUppercase}} et bienvenue sur PizzApp !
