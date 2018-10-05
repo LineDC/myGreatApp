@@ -6,24 +6,39 @@
 -->
 <ion-header>
 
+  <!-- <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div padding>
+        <ion-segment [(ngModel)]="categorie>
+          <ion-segment-button value="pizza">
+            Pizza
+          </ion-segment-button>
+          <ion-segment-button value="drink">
+            Boisson
+          </ion-segment-button>
+          <ion-segment-button value="dessert">
+            Dessert
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+    </ion-title>
+  </ion-navbar> -->
+
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
       <div padding>
-      <ion-segment [(ngModel)]="categorie">
-        <ion-segment-button value="pizza">
-          Pizza
-        </ion-segment-button>
-        <ion-segment-button value="drink">
-          Boisson
-        </ion-segment-button>
-        <ion-segment-button value="dessert">
-          Dessert
-        </ion-segment-button>
-      </ion-segment>
-    </div>
+        <ion-segment [(ngModel)]="categorie" (ionChange)="maMethod($event)">
+          <ion-segment-button *ngFor="let c of categories " value="{{c.name}}">
+            {{c.name}}
+          </ion-segment-button>
+        </ion-segment>
+      </div>
     </ion-title>
   </ion-navbar>
 
@@ -67,41 +82,78 @@
   </ion-segment>
 </div> -->
 
-<div [ngSwitch]="categorie">
-  <ion-list *ngSwitchCase="'pizza'">
-    <ion-item>
-      <div *ngFor="let p of products">
-        <div *ngIf = "p.categorie_id == 1">
-          {{p.name}}
+  <!-- <div [ngSwitch]="categorie">
+    <ion-list *ngSwitchCase="'pizza'">
+      <ion-item>
+        <div *ngFor="let p of products">
+          <div *ngIf="p.categorie_id == 1">
+            {{p.name}}
+          </div>
         </div>
-      </div>
-    </ion-item>
-  </ion-list>
-</div>
+      </ion-item>
+    </ion-list>
+  </div>
 
-<div [ngSwitch]="categorie">
-  <ion-list *ngSwitchCase="'drink'">
-    <ion-item>
-      <div *ngFor="let p of products">
-        <div *ngIf = "p.categorie_id == 11">
-          {{p.name}}
+  <div [ngSwitch]="categorie">
+    <ion-list *ngSwitchCase="'drink'">
+      <ion-item>
+        <div *ngFor="let p of products">
+          <div *ngIf="p.categorie_id == 11">
+            {{p.name}}
+          </div>
         </div>
-      </div>
-    </ion-item>
-  </ion-list>
-</div>
+      </ion-item>
+    </ion-list>
+  </div>
 
-<div [ngSwitch]="categorie">
-  <ion-list *ngSwitchCase="'dessert'">
-    <ion-item>
-      <div *ngFor="let p of products">
-        <div *ngIf = "p.categorie_id == 21">
-          {{p.name}}
+  <div [ngSwitch]="categorie">
+    <ion-list *ngSwitchCase="'dessert'">
+      <ion-item>
+        <div *ngFor="let p of products">
+          <div *ngIf="p.categorie_id == 21">
+            {{p.name}}
+          </div>
         </div>
-      </div>
-    </ion-item>
-  </ion-list>
-</div>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+ <!-- En dynamisant, on n'a plus besoin de swtich -->
+  <div [ngSwitch]="categorie">
+    <ion-list *ngSwitchCase="'{{c.name}}'">
+      <ion-item>
+        <div *ngFor="let p of products">
+          <div *ngIf="p.categorie_id == 1">
+            {{p.name}}
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div [ngSwitch]="categorie">
+    <ion-list *ngSwitchCase="'{{c.name}}'">
+      <ion-item>
+        <div *ngFor="let p of products">
+          <div *ngIf="p.categorie_id == 11">
+            {{p.name}}
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div [ngSwitch]="categorie">
+    <ion-list *ngSwitchCase="'{{c.name}}'">
+      <ion-item>
+        <div *ngFor="let p of products">
+          <div *ngIf="p.categorie_id == 21">
+            {{p.name}}
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
 
   <!-- <div *ngIf="firstnameuser; else withoutPipe">
    Bonjour {{firstnameuser | firstLetterUppercase}} {{lastnameuser | allLetterUppercase}} et bienvenue sur PizzApp !
