@@ -10,7 +10,21 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>PizzApp</ion-title>
+    <ion-title>
+      <div padding>
+      <ion-segment [(ngModel)]="categorie">
+        <ion-segment-button value="pizza">
+          Pizza
+        </ion-segment-button>
+        <ion-segment-button value="drink">
+          Boisson
+        </ion-segment-button>
+        <ion-segment-button value="dessert">
+          Dessert
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -39,7 +53,7 @@
     <ion-list><ion-item *ngFor="let m of menus">{{m.name}}</ion-item></ion-list> -->
   </ng-template>
 
-  <div padding>
+  <!-- <div padding>
   <ion-segment [(ngModel)]="categorie">
     <ion-segment-button value="pizza">
       Pizza
@@ -51,7 +65,7 @@
       Dessert
     </ion-segment-button>
   </ion-segment>
-</div>
+</div> -->
 
 <div [ngSwitch]="categorie">
   <ion-list *ngSwitchCase="'pizza'">
