@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
-
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the MaSuperPage page.
@@ -24,18 +24,31 @@ export class MaSuperPage {
   lastnameuser: string
 
   categories: [any]
+  products: [any]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider) {
     this.firstname = this.navParams.get('firstname'),
     this.firstnameuser = this.navParams.get('firstnameuser'),
-    this.lastnameuser = this.navParams.get('lastnameuser'),
-    this.apiProvider.getCategories().subscribe(products => {
-      this.categories = data.data.categories;
-      })
+    this.lastnameuser = this.navParams.get('lastnameuser')
+  }
+
+  showProducts() {
+    this.apiProvider.getProducts().subscribe(products => {
+      this.products = products
+    });
+  }
+
+  showCategories() {
+    // le categories après le subscribe peut s'appeler comme on veut, il faut juste que ça soit le même après le this.nom =
+    this.apiProvider.getCategories().subscribe(categories => {
+      this.categories = categories
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MaSuperPage');
+    this.showProducts();
+    this.showCategories();
   }
 
 }

@@ -25,6 +25,11 @@
 
   <ng-template #withoutPipe>
     VEUX-TU BIEN SAISIR TES IDENTIFIANTS !!!
+    <div *ngFor="let c of categories">{{c.name}}</div>
+    <br>
+    <br>
+    <br>
+    <div *ngFor="let p of products">{{p.name}}</div>
   </ng-template>
 
   <!-- <div *ngIf="firstnameuser; else withoutPipe">

@@ -8,6 +8,9 @@ import { MaSuperPage } from '../pages/ma-super/ma-super';
 import { ListPage } from '../pages/list/list';
 import { FormPage } from '../pages/form/form';
 
+import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
+
+
 @Component({
   templateUrl: 'app.html'
 })
