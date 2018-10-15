@@ -59,8 +59,4 @@ export class MaSuperPage {
     this.showCategories();
     this.showMenus();
   }
-
-  // onSegmentChanged() {
-  //   console.log("eh")
-  // }
 }
