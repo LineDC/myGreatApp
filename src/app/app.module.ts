@@ -18,6 +18,10 @@ import { ConnectApiProvider } from '../providers/connect-api/connect-api';
 
 import { HttpModule } from '@angular/http';
 
+import {NgModule, LOCALE_ID} from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
 
 // Dans déclaration et entryComponents, on va importer le nom qu'on a entre {}
 @NgModule({
@@ -45,8 +49,12 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConnectApiProvider
+    ConnectApiProvider,
+    { provide: ErrorHandler, LOCALE_ID,
+    useValue: 'fr',
+    useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
+
+registerLocaleData(localeFr, 'fr');
