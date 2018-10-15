@@ -60,4 +60,9 @@ export class MaSuperPage {
     this.showMenus();
   }
 
+  maMethod(event){
+    console.log(event.checked);
+    console.log("HATTTATEOJGIFOGOFDHGUDFH")
+  }
+
 }
