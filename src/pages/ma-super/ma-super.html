@@ -33,16 +33,9 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <div padding>
-        <ion-segment [(ngModel)]="categorie" (ionChange)="maMethod($event)">
-          <ion-segment-button *ngFor="let c of categories " value="{{c.name}}">
-            {{c.name}}
-          </ion-segment-button>
-        </ion-segment>
-      </div>
+      Ma page
     </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
@@ -52,6 +45,14 @@
       <br> Le prénom saisi est : {{ lastnameuser | firstLetterUppercase }}
     </p>
   </div>
+
+  <ion-segment [(ngModel)]="categorie" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button *ngFor="let c of categories " value="{{c.id}}">
+      {{c.name}}
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- ////////////////////////////////////////////////////////// -->
 
   <!-- <div *ngIf="firstnameuser; else withoutPipe">
    Bonjour {{firstnameuser | firstLetterUppercase}} {{lastnameuser | allLetterUppercase}} et bienvenue sur PizzApp !
@@ -90,7 +91,7 @@
   </ion-segment>
 </div> -->
 
-  <!-- <div [ngSwitch]="categorie">
+  <div [ngSwitch]="categorie">
     <ion-list *ngSwitchCase="'pizza'">
       <ion-item>
         <div *ngFor="let p of products">
@@ -124,9 +125,9 @@
         </div>
       </ion-item>
     </ion-list>
-  </div>-->
+  </div>
 
-  <!-- En dynamisant, on n'a plus besoin de swtich -->
+  <!-- Switch avec le {{}} -->
   <!-- <div [ngSwitch]="categorie">
     <ion-list *ngSwitchCase="'{{c.name}}'">
       <ion-item>

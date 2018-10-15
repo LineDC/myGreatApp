@@ -28,8 +28,8 @@ export class MaSuperPage {
   menus: [any]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider) {
-    this.firstname = this.navParams.get('firstname'),
-    this.firstnameuser = this.navParams.get('firstnameuser'),
+    this.firstname = this.navParams.get('firstname')
+    this.firstnameuser = this.navParams.get('firstnameuser')
     this.lastnameuser = this.navParams.get('lastnameuser')
   }
 
@@ -60,9 +60,7 @@ export class MaSuperPage {
     this.showMenus();
   }
 
-  maMethod(event){
-    console.log(event.checked);
-    console.log("HATTTATEOJGIFOGOFDHGUDFH")
-  }
-
+  // onSegmentChanged() {
+  //   console.log("eh")
+  // }
 }
