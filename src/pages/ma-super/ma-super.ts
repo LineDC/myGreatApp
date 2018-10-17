@@ -23,7 +23,6 @@ export class MaSuperPage {
   firstnameuser: string;
   lastnameuser: string;
 
-  categorie: any;
   categories: any[];
   products: any[];
   menus: any[];
@@ -61,7 +60,11 @@ export class MaSuperPage {
     this.showMenus();
   }
 
-  // test(event) {
-  //   console.log(event);
-  // }
+  onChange(event) {
+    console.log(event);
+    console.log(event.value);
+    this.apiProvider.getProductsId().subscribe(products => {
+      this.products = products
+    });
+  }
 }
