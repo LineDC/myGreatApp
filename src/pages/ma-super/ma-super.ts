@@ -19,13 +19,14 @@ import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 })
 export class MaSuperPage {
 
-  firstname: string
-  firstnameuser: string
-  lastnameuser: string
+  firstname: string;
+  firstnameuser: string;
+  lastnameuser: string;
 
-  categories: [any]
-  products: [any]
-  menus: [any]
+  categorie: any;
+  categories: any[];
+  products: any[];
+  menus: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider) {
     this.firstname = this.navParams.get('firstname')
@@ -59,4 +60,8 @@ export class MaSuperPage {
     this.showCategories();
     this.showMenus();
   }
+
+  // test(event) {
+  //   console.log(event);
+  // }
 }

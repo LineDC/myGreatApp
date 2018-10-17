@@ -11,6 +11,10 @@
     </button>
     <ion-title>
       Les produits
+      <ion-title id="basketProducts">
+        <ion-icon name="basket" item-start></ion-icon>
+        <ion-badge>2</ion-badge>
+      </ion-title>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -33,6 +37,22 @@
  Veuillez rentrer votre nom et prénom
 </ng-template> -->
 
+  <!-- <div padding>
+  <ion-segment [(ngModel)]="categorie" (ionChange)="test($event)">
+    <ion-segment-button value="pizza">
+      Pizza
+    </ion-segment-button>
+    <ion-segment-button value="drink">
+      Boisson
+    </ion-segment-button>
+    <ion-segment-button value="dessert">
+      Dessert
+    </ion-segment-button>
+  </ion-segment>
+</div> -->
+
+<!-- Categorie : {{categorie}}
+Categories : {{categories | json}} -->
   <div padding>
   <ion-segment [(ngModel)]="categorie">
     <ion-segment-button value="pizza">
@@ -44,15 +64,30 @@
     <ion-segment-button value="dessert">
       Dessert
     </ion-segment-button>
+      <!-- <ion-segment-button *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</ion-segment-button> -->
   </ion-segment>
 </div>
 
 <div [ngSwitch]="categorie">
 <ion-list *ngSwitchCase="'pizza'">
       <h2>Pizzas :</h2>
+
+      <ion-card>
+        <img src="img/nin-live.png"/>
+        <ion-card-content>
+          <ion-card-title>
+            Nine Inch Nails Live
+            </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+      
       <span *ngFor="let p of products">
-          <!-- <ion-item  *ngIf="p.categorie.name == 'Pizzas'"> -->
-          <ion-item  *ngIf="p.categorie.id == 1">
+          <ion-item  *ngIf="p.categorie.name == 'Pizzas'">
+          <!-- <ion-item  *ngIf="p.categorie.id == 1"> -->
               <h2>{{p.name}}</h2>
               <img src="{{p.image}}" alt="" class="logoProduct" >
               <p>{{p.price | currency:'EUR':true:'1.2-2':'fr' }}</p>

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -50,8 +50,7 @@ import localeFr from '@angular/common/locales/fr';
     StatusBar,
     SplashScreen,
     ConnectApiProvider,
-    { provide: ErrorHandler, LOCALE_ID,
-    useValue: 'fr',
+    { provide: ErrorHandler,
     useClass: IonicErrorHandler}
   ]
 })
