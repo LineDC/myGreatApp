@@ -22,6 +22,9 @@ import {NgModule, LOCALE_ID} from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
+import { ModalPage } from '../pages/modal/modal';
+
+
 
 // Dans déclaration et entryComponents, on va importer le nom qu'on a entre {}
 @NgModule({
@@ -30,7 +33,8 @@ import localeFr from '@angular/common/locales/fr';
     HomePage,
     MaSuperPage,
     ListPage,
-    FormPage
+    FormPage,
+    ModalPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ import localeFr from '@angular/common/locales/fr';
     HomePage,
     MaSuperPage,
     ListPage,
-    FormPage
+    FormPage,
+    ModalPage
   ],
   providers: [
     StatusBar,

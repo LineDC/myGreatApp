@@ -1,4 +1,4 @@
-export class Product {
+export class MaSuperProduct {
   id: number;
   name: string;
   image: string;

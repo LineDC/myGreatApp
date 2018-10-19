@@ -3,6 +3,9 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 // import { Observable } from 'rxjs/Observable';
 
+import { ModalPage } from '../modal/modal';
+
+
 /**
  * Generated class for the MaSuperPage page.
  *
@@ -19,7 +22,7 @@ import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 })
 export class MaSuperPage {
 
-  products: Array<Product> = [];
+  products: Array<MaSuperProduct> = [];
 
   firstname: string;
   firstnameuser: string;
@@ -71,7 +74,12 @@ export class MaSuperPage {
   }
 
   presentProfileModal() {
-    let profileModal = this.modalCtrl.create('ma-super');
+    const profileModal = this.modalCtrl.create(ModalPage);
     profileModal.present();
   }
+
+  // dismiss() {
+  //   let data = { 'foo': 'bar' };
+  //   this.viewCtrl.dismiss(data);
+  // }
 }
