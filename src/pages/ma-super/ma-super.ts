@@ -63,7 +63,7 @@ export class MaSuperPage {
   onChange(event) {
     console.log(event);
     console.log(event.value);
-    this.apiProvider.getProductsId().subscribe(products => {
+    this.apiProvider.getProductsId(event.value).subscribe(products => {
       this.products = products
     });
   }

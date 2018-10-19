@@ -35,8 +35,8 @@ export class ConnectApiProvider {
     return this.http.get(this.url+'/menus').map(response => response.json());
   }
 
-  getProductsId() {
-    return this.http.get(this.url+'/products/categories/{id}').map(response => response.json());
+  getProductsId(id) {
+    return this.http.get(this.url+'/products/categories/'+id).map(response => response.json());
   }
 
 }
