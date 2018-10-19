@@ -3,7 +3,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Categories</ion-title>
+    <ion-title>Produits</ion-title>
+    <ion-title id="badgeProduct">
+      <ion-icon name="basket" item-start></ion-icon>
+      <ion-badge item-end>4</ion-badge>
+    </ion-title>
   </ion-navbar>
   <ion-toolbar no-border-top>
     <ion-segment [(ngModel)]="categorie">
@@ -30,7 +34,7 @@
         <button ion-button icon-only text-left>
           <ion-icon name="eye"></ion-icon>
         </button>
-        <button ion-button icon-only>
+        <button ion-button icon-only (click)="presentProfileModal()">
           <ion-icon name="basket"></ion-icon>
         </button>
       </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 // import { Observable } from 'rxjs/Observable';
 
@@ -19,15 +19,17 @@ import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 })
 export class MaSuperPage {
 
+  products: Array<Product> = [];
+
   firstname: string;
   firstnameuser: string;
   lastnameuser: string;
 
   categories: any[];
-  products: any[];
+  // products: any[];
   menus: any[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider, public modalCtrl: ModalController) {
     this.firstname = this.navParams.get('firstname')
     this.firstnameuser = this.navParams.get('firstnameuser')
     this.lastnameuser = this.navParams.get('lastnameuser')
@@ -35,7 +37,8 @@ export class MaSuperPage {
 
   showProducts() {
     this.apiProvider.getProducts().subscribe(products => {
-      this.products = products
+      this.products = products;
+      console.log(this.products[0].name)
     });
   }
 
@@ -61,10 +64,14 @@ export class MaSuperPage {
   }
 
   onChange(event) {
-    console.log(event);
-    console.log(event.value);
+    console.log('catégorie ' + event.value);
     this.apiProvider.getProductsId(event.value).subscribe(products => {
       this.products = products
     });
+  }
+
+  presentProfileModal() {
+    let profileModal = this.modalCtrl.create('ma-super');
+    profileModal.present();
   }
 }
