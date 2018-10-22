@@ -5,6 +5,7 @@ import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 
 import { ModalPage } from '../modal/modal';
 
+import { MaSuperProduct } from '../../models/product/product';
 
 /**
  * Generated class for the MaSuperPage page.
@@ -22,7 +23,7 @@ import { ModalPage } from '../modal/modal';
 })
 export class MaSuperPage {
 
-  products: Array<MaSuperProduct> = [];
+  products: Array<Product> = [];
 
   firstname: string;
   firstnameuser: string;
@@ -73,13 +74,8 @@ export class MaSuperPage {
     });
   }
 
-  presentProfileModal() {
-    const profileModal = this.modalCtrl.create(ModalPage);
+  presentProfileModal(product) {
+    const profileModal = this.modalCtrl.create(ModalPage, {'product' : product});
     profileModal.present();
   }
-
-  // dismiss() {
-  //   let data = { 'foo': 'bar' };
-  //   this.viewCtrl.dismiss(data);
-  // }
 }

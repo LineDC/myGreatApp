@@ -14,11 +14,19 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ModalPage {
 
+  product: Array<MaSuperProduct> = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.product = navParams.get('product');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
+
+  // dismiss() {
+  //   let data = { 'foo': 'bar' };
+  //   this.viewCtrl.dismiss(data);
+  // }
 
 }

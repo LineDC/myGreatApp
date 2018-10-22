@@ -14,5 +14,30 @@
 
 
 <ion-content padding>
-
+  <ion-card>
+    <img src="{{product.image}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{product.name}}
+      </ion-card-title>
+      <p>
+        {{product.price | currency:'EUR':true:'1.2-2':'fr'}}
+      </p>
+    </ion-card-content>
+    <div text-center>
+      <button ion-button icon-only text-left (click)="addProduct()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="removeProduct()">
+        <ion-icon name="remove"></ion-icon>
+      </button>
+    </div>
+    <br>
+    <br>
+    <div text-center>
+      Quantité :
+    </div>
+    <br>
+    <br>
+  </ion-card>
 </ion-content>
