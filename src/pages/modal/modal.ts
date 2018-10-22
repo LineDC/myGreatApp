@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController} from 'ionic-angular';
 
 import { MaSuperProduct } from '../../models/product/product';
 
@@ -18,18 +18,13 @@ export class ModalPage {
 
   product: Array<MaSuperProduct> = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.product = navParams.get('product');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
   }
-
-  // dismiss() {
-  //   let data = { 'foo': 'bar' };
-  //   this.viewCtrl.dismiss(data);
-  // }
 
   addProduct() {
     this.product.quantity += 1;
@@ -39,6 +34,16 @@ export class ModalPage {
     if (this.product.quantity > 0) {
       this.product.quantity -= 1;
     }
+  }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+
+  addProductDismiss() {
+    let data = this.product;
+    console.log(data);
+    this.viewCtrl.dismiss(data);
   }
 
 }

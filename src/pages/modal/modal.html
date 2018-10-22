@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>Modal</ion-title>
+     <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon>Close</ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -28,7 +33,7 @@
       <button ion-button icon-only text-left (click)="removeProduct()">
         <ion-icon name="remove"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="addProduct()">
+      <button ion-button icon-only (click)="addProductDismiss()">
         <ion-icon name="add"></ion-icon>
       </button>
     </div>
@@ -41,6 +46,13 @@
     <br>
     <div text-center>
       Prix total : {{product.price * product.quantity | currency:'EUR':true:'1.2-2':'fr'}}
+    </div>
+    <br>
+    <br>
+    <div text-center>
+      <button ion-button icon-only (click)="validate()">
+        <ion-icon name="checkmark"> Valider</ion-icon>
+      </button>
     </div>
     <br>
     <br>
