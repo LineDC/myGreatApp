@@ -5,6 +5,8 @@ import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
 
 import { ModalPage } from '../modal/modal';
 
+import { BasketPage } from '../basket/basket';
+
 import { MaSuperProduct } from '../../models/product/product';
 
 /**

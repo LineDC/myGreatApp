@@ -24,6 +24,8 @@ import localeFr from '@angular/common/locales/fr';
 
 import { ModalPage } from '../pages/modal/modal';
 
+import { BasketPage } from '../pages/basket/basket';
+
 
 
 // Dans déclaration et entryComponents, on va importer le nom qu'on a entre {}
@@ -34,7 +36,8 @@ import { ModalPage } from '../pages/modal/modal';
     MaSuperPage,
     ListPage,
     FormPage,
-    ModalPage
+    ModalPage,
+    BasketPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { ModalPage } from '../pages/modal/modal';
     MaSuperPage,
     ListPage,
     FormPage,
-    ModalPage
+    ModalPage,
+    BasketPage
   ],
   providers: [
     StatusBar,
