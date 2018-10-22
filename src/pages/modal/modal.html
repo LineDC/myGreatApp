@@ -25,17 +25,17 @@
       </p>
     </ion-card-content>
     <div text-center>
-      <button ion-button icon-only text-left (click)="addProduct()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-      <button ion-button icon-only (click)="removeProduct()">
+      <button ion-button icon-only text-left (click)="removeProduct()">
         <ion-icon name="remove"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="addProduct()">
+        <ion-icon name="add"></ion-icon>
       </button>
     </div>
     <br>
     <br>
     <div text-center>
-      Quantité :
+      Quantité : {{product.quantity}}
     </div>
     <br>
     <br>

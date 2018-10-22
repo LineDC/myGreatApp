@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { MaSuperProduct } from '../../models/product/product';
+
 /**
  * Generated class for the ModalPage page.
  *
@@ -28,5 +30,15 @@ export class ModalPage {
   //   let data = { 'foo': 'bar' };
   //   this.viewCtrl.dismiss(data);
   // }
+
+  addProduct() {
+    this.product.quantity += 1;
+  }
+
+  removeProduct() {
+    if (this.product.quantity > 0) {
+      this.product.quantity -= 1;
+    }
+  }
 
 }

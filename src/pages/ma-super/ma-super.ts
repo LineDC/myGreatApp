@@ -76,6 +76,7 @@ export class MaSuperPage {
 
   presentProfileModal(product) {
     const profileModal = this.modalCtrl.create(ModalPage, {'product' : product});
+    product.quantity = 1;
     profileModal.present();
   }
 }
