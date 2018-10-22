@@ -21,7 +21,7 @@
         {{product.name}}
       </ion-card-title>
       <p>
-        {{product.price | currency:'EUR':true:'1.2-2':'fr'}}
+        Prix unitaire : {{product.price | currency:'EUR':true:'1.2-2':'fr'}}
       </p>
     </ion-card-content>
     <div text-center>
@@ -36,6 +36,11 @@
     <br>
     <div text-center>
       Quantité : {{product.quantity}}
+    </div>
+    <br>
+    <br>
+    <div text-center>
+      Prix total : {{product.price * product.quantity | currency:'EUR':true:'1.2-2':'fr'}}
     </div>
     <br>
     <br>
