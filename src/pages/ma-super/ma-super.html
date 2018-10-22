@@ -6,8 +6,10 @@
     <ion-title>Produits</ion-title>
     <ion-buttons end>
       <ion-title >
-        <ion-icon name="basket" item-start></ion-icon>
-        <ion-badge item-end>4</ion-badge>
+        <button (click)='basketPage()'>
+          <ion-icon name="basket" item-start></ion-icon>
+        </button>
+        <ion-badge item-end> {{products.quantity}} </ion-badge>
       </ion-title>
     </ion-buttons>
   </ion-navbar>

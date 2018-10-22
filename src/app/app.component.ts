@@ -25,7 +25,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Accueil', component: HomePage },
-      { title: 'PizzApp', component: MaSuperPage },
+      { title: 'Produits', component: MaSuperPage },
       // { title: 'ListeTest', component: ListPage },
       { title: 'Formulaire', component: FormPage }
     ];

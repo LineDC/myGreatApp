@@ -81,4 +81,8 @@ export class MaSuperPage {
     product.quantity = 1;
     profileModal.present();
   }
+
+  basketPage() {
+    this.navCtrl.push(BasketPage);
+  }
 }

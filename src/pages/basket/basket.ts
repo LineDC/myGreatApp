@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { MaSuperProduct } from '../../models/product/product';
+
+
 /**
  * Generated class for the BasketPage page.
  *
@@ -13,6 +16,9 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'basket.html',
 })
 export class BasketPage {
+
+  product: Array<MaSuperProduct> = [];
+  basket: [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
