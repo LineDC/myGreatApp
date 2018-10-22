@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ConnectApiProvider } from '../../providers/connect-api/connect-api';
+import { BasketProvider } from '../../providers/basket/basket';
 // import { Observable } from 'rxjs/Observable';
 
 import { ModalPage } from '../modal/modal';
@@ -79,6 +80,9 @@ export class MaSuperPage {
   presentProfileModal(product) {
     const profileModal = this.modalCtrl.create(ModalPage, {'product' : product});
     product.quantity = 1;
+    profileModal.onDidDismiss(data => {
+      console.log(data);
+    });
     profileModal.present();
   }
 

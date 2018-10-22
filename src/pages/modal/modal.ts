@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController} from 'ionic-angular';
 
 import { MaSuperProduct } from '../../models/product/product';
+import { BasketPage } from '../basket/basket';
+import { MaSuperPage } from '../ma-super/ma-super';
 
 /**
  * Generated class for the ModalPage page.
@@ -43,6 +45,12 @@ export class ModalPage {
   addProductDismiss() {
     let data = this.product;
     console.log(data);
+    console.log("Prix : " + data.price);
+    console.log("Quantité : " + data.quantity);
+    console.log("Nom : " + data.name);
+    // this.navCtrl.push(MaSuperPage, {
+    //   data: data
+    // });
     this.viewCtrl.dismiss(data);
   }
 

@@ -18,9 +18,10 @@ import { MaSuperProduct } from '../../models/product/product';
 export class BasketPage {
 
   product: Array<MaSuperProduct> = [];
-  basket: [];
+  data: [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+     this.data = navParams.get('data');
   }
 
   ionViewDidLoad() {

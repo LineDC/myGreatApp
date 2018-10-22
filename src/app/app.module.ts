@@ -25,6 +25,7 @@ import localeFr from '@angular/common/locales/fr';
 import { ModalPage } from '../pages/modal/modal';
 
 import { BasketPage } from '../pages/basket/basket';
+import { BasketProvider } from '../providers/basket/basket';
 
 
 
@@ -60,7 +61,8 @@ import { BasketPage } from '../pages/basket/basket';
     SplashScreen,
     ConnectApiProvider,
     { provide: ErrorHandler,
-    useClass: IonicErrorHandler}
+    useClass: IonicErrorHandler},
+    BasketProvider
   ]
 })
 export class AppModule {}
