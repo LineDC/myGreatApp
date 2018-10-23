@@ -31,24 +31,11 @@ export class BasketPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasketPage');
     // console.log(this.data);
-    this.totalCommand(this.data);
+    this.basketProvider.setTotalCommand(this.data);
+    this.basketProvider.setTotalArticle(this.data);
+    this.total = this.basketProvider.getTotalCommand();
+    this.totalArticle = this.basketProvider.getTotalArticles();
   }
 
-  totalCommand(data) {
-    let th = this;
-    data.forEach(function(d) {
-      // console.log(d);
-      // console.log(JSON.stringify(d.price));
-      // console.log(JSON.stringify(d.quantity));
-      // console.log(th.total)
-      th.total = th.total + (d.price * d.quantity);
-      // console.log(th.total);
-      th.totalArticle = th.totalArticle + d.quantity;
-      // console.log(th.totalArticle)
-    });
-  }
 
-  getTotalCommand() {
-    return this.total;
-  }
 }

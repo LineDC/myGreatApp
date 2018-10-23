@@ -36,6 +36,8 @@ export class MaSuperPage {
   // products: any[];
   menus: any[];
 
+  totalArticle = 0;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider, public modalCtrl: ModalController, public basketProvider: BasketProvider) {
     this.firstname = this.navParams.get('firstname')
     this.firstnameuser = this.navParams.get('firstnameuser')
@@ -68,6 +70,7 @@ export class MaSuperPage {
     this.showProducts();
     this.showCategories();
     this.showMenus();
+    this.totalArticle = this.basketProvider.getTotalArticles();
   }
 
   onChange(event) {
