@@ -13,13 +13,13 @@ export class BasketProvider {
   }
 
   getBasket() {
-    console.log(JSON.stringify(this.data));
+    // console.log(JSON.stringify(this.data));
     return this.data;
   }
 
   setBasket(dataproduct) {
     this.data.push(dataproduct);
-    console.log(JSON.stringify(this.data));
+    // console.log(JSON.stringify(this.data));
   }
 
 }
