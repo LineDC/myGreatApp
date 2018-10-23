@@ -48,14 +48,16 @@
       </ion-card-content>
     </ion-card>
   </div>
+</ion-content>
 
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Votre Total</ion-title>
     <ion-card>
       <ion-card-content>
         Nombre d'articles : {{ totalArticle }}
-        <br>
         Prix total : {{ total | currency:'EUR':true:'1.2-2':'fr' }}
       </ion-card-content>
     </ion-card>
-
-
-</ion-content>
+  </ion-toolbar>
+</ion-footer>

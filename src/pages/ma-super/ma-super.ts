@@ -35,7 +35,7 @@ export class MaSuperPage {
   categories: any[];
   // products: any[];
   menus: any[];
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider, public modalCtrl: ModalController, public basketProvider: BasketProvider) {
     this.firstname = this.navParams.get('firstname')
     this.firstnameuser = this.navParams.get('firstnameuser')
@@ -71,7 +71,7 @@ export class MaSuperPage {
   }
 
   onChange(event) {
-    console.log('catégorie ' + event.value);
+    // console.log('catégorie ' + event.value);
     this.apiProvider.getProductsId(event.value).subscribe(products => {
       this.products = products
     });
