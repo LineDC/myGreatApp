@@ -7,14 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Basket</ion-title>
+    <ion-title>Panier</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  {{data.name}}
-  {{data.price}}
-  {{data.quantity}}
+  <div *ngFor="let d of data">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>
+          {{d.name}}
+        </ion-card-title>
+        <p>
+          Prix unitaire : {{d.price | currency:'EUR':true:'1.2-2':'fr'}}
+        </p>
+        <p>
+          Quantité : {{d.quantity }}
+        </p>
+        <p>
+          Prix total : {{d.quantity * d.price | currency:'EUR':true:'1.2-2':'fr' }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-card>
+    Nombre d'articles :
+    Prix total :
+  </ion-card>
 </ion-content>

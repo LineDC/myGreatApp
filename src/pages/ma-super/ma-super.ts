@@ -8,7 +8,7 @@ import { ModalPage } from '../modal/modal';
 
 import { BasketPage } from '../basket/basket';
 
-import { MaSuperProduct } from '../../models/product/product';
+import { Product } from '../../models/product/product';
 
 /**
  * Generated class for the MaSuperPage page.
@@ -35,8 +35,8 @@ export class MaSuperPage {
   categories: any[];
   // products: any[];
   menus: any[];
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider, public modalCtrl: ModalController) {
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider, public modalCtrl: ModalController, public basketProvider: BasketProvider) {
     this.firstname = this.navParams.get('firstname')
     this.firstnameuser = this.navParams.get('firstnameuser')
     this.lastnameuser = this.navParams.get('lastnameuser')
@@ -81,7 +81,7 @@ export class MaSuperPage {
     const profileModal = this.modalCtrl.create(ModalPage, {'product' : product});
     product.quantity = 1;
     profileModal.onDidDismiss(data => {
-      console.log(data);
+      this.basketProvider.setBasket(data);
     });
     profileModal.present();
   }
