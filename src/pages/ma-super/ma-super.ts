@@ -70,7 +70,6 @@ export class MaSuperPage {
     this.showProducts();
     this.showCategories();
     this.showMenus();
-    this.totalArticle = this.basketProvider.getTotalArticles();
   }
 
   onChange(event) {

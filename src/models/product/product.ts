@@ -3,7 +3,7 @@ export class Product {
   name: string;
   image: string;
   price: number;
-  quantity? = 0;
+  quantity?: number;
 }
 
 // ?pour faire comprendre que la propriété peut être présente mais c'est pas automatique

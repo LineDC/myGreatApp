@@ -27,13 +27,13 @@ export class ModalPage {
     console.log('ionViewDidLoad ModalPage');
   }
 
-  addProduct() {
-    this.product.quantity += 1;
+  addProduct(p) {
+    p.quantity += 1;
   }
 
-  removeProduct() {
-    if (this.product.quantity > 0) {
-      this.product.quantity -= 1;
+  removeProduct(p) {
+    if (p.quantity > 0) {
+      p.quantity -= 1;
     }
   }
 
